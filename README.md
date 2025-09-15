@@ -25,7 +25,7 @@ Todo funciona 100% en tu navegador (no se sube nada a servidores).
 1. Crea un repositorio nuevo en GitHub (por ejemplo `podcast-radio-demo`).
 2. Sube estos archivos (`index.html`, `styles.css`, `script.js`, `README.md`).
 3. Ve a *Settings* → *Pages* → selecciona la rama `main`.
-4. Espera unos minutos y entra a:https://tu-usuario.github.io/podcast-radio-demo/
+4. Espera unos minutos y entra a:https://mariosotm7.github.io/podcast-radio-demo/
 ## ⚠️ Notas
 - Recomendado usar **Google Chrome** o **Microsoft Edge** (Safari tiene limitaciones).
 - El audio se graba como WAV (16-bit PCM).
