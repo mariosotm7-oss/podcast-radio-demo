@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Estación Podcast — Grabar & Mezclar</title>
+  <meta name="description" content="Estación de radio para grabar podcasts con audio de fondo y exportación de mezcla." />
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="brand">
+        <div class="logo">🎙️</div>
+        <div>
+          <h1>RadioStudio</h1>
+          <p>Graba, mezcla y descarga tus podcasts</p>
+        </div>
+      </div>
+      <div class="status" id="status">Listo</div>
+    </header>
+
+    <main class="panel">
+      <!-- Controls -->
+      <section class="card">
+        <h2>Audio de fondo</h2>
+        <p class="muted">Sube un track para usar como ambiente (loop) durante tu grabación.</p>
+
+        <div class="row">
+          <input type="file" id="bg-file" accept="audio/*">
+          <button id="bg-play" class="btn" disabled>Reproducir</button>
+          <button id="bg-stop" class="btn ghost" disabled>Parar</button>
+        </div>
+
+        <label class="slider-row">
+          <span>Volumen fondo</span>
+          <input id="bg-volume" type="range" min="0" max="1" step="0.01" value="0.4">
+          <span id="bg-vol-label">40%</span>
+        </label>
+
+        <label class="checkbox">
+          <input id="bg-loop" type="checkbox" checked>
+          <span>Loop de fondo</span>
+        </label>
+      </section>
+
+      <section class="card">
+        <h2>Grabación</h2>
+        <p class="muted">Controla tu micrófono y graba tu episodio.</p>
+
+        <div class="row">
+          <select id="mic-list"></select>
+          <button id="btn-record" class="btn primary">Grabar</button>
+          <button id="btn-stop" class="btn danger" disabled>Detener</button>
+        </div>
+
+        <div class="row small">
+          <label>Vol mic:
+            <input id="mic-volume" type="range" min="0" max="2" step="0.01" value="1">
+            <span id="mic-vol-label">100%</span>
+          </label>
+          <label>Monitorear:
+            <input id="monitor" type="checkbox">
+          </label>
+        </div>
+
+        <div class="wave-info">
+          <small id="rec-time">00:00</small>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Reproducir & Descargar</h2>
+        <p class="muted">Escucha la grabación, descarga sólo la voz o la mezcla (voz + fondo).</p>
+
+        <div class="row">
+          <audio id="preview" controls></audio>
+        </div>
+
+        <div class="row">
+          <button id="btn-download-voice" class="btn" disabled>Descargar voz (WAV)</button>
+          <button id="btn-download-mix" class="btn primary" disabled>Descargar mezcla (WAV)</button>
+        </div>
+
+        <div class="notes">
+          <p><strong>Nota:</strong> la mezcla se genera en el cliente. Ajusta el volumen del fondo antes de exportar para controlar la mezcla final.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Diseñado para grabar podcasts — todo funciona en tu navegador. No se sube nada a servidores.</small>
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
